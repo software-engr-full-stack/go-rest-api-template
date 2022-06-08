@@ -52,8 +52,7 @@ func (u *User) SetPassword(password string) error {
 	hashBytes, err := bcrypt.GenerateFromPassword([]byte(password), bcrypt.DefaultCost)
 
 	if err != nil {
-		// return better error message
-		return err
+		return Error{Code: EDEFAULT, Message: "unable to set password", Err: err}
 	}
 
 	u.PasswordHash = string(hashBytes)
