@@ -1,0 +1,7 @@
+dynamodb:
+  development:
+    table_name: 'go-rest-api-template-dev'
+  test:
+    table_name: 'go-rest-api-template-test'
+  production:
+    table_name: 'go-rest-api-template'
